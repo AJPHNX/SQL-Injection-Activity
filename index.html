@@ -8,12 +8,14 @@
     <title>SQL-Injection Activity</title>
 </head>
 <body>
+    <h1>SQL-Injection Practice</h1>
     <form action="/login" method="post">
+        <h2>User Login</h2>
         <div class="container">
             <label for="username">Username:</label><br>
-            <input type="text" placeholder="Enter Username" id="username" name="username" required><br>
+            <input type="text" placeholder="Enter Username" id="username" name="username" class="textbox blink" required><br>
             <label for="password">Password:</label><br>
-            <input type="password"  placeholder="Enter Password" id="password" name="password" required><br><br>
+            <input type="password"  placeholder="Enter Password" id="password" name="password" class="textbox blink" required><br><br>
             <button type="submit">Login</button> 
         </div>  
         <script>

@@ -4,6 +4,8 @@ const http = require('http'),
     bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
 
+const attackString = "unknown' OR '1'='1";
+
 const app = express();
 app.use(express.static('.'))
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -13,12 +15,14 @@ const db = new sqlite3.Database(':memory:');
 db.serialize(function () {
     db.run("CREATE TABLE user (username TEXT, password TEXT, title TEXT)");
 	db.run("INSERT INTO user VALUES ('privilegedUser', 'privilegedUser1', 'Administrator')");
+	db.run("INSERT INTO user VALUES ('averageUser', 'averageUser1', 'user')");
 });
 
 
 app.get('/',(req,res) =>{
     res.sendFile('index.html');
 })
+
 
 app.post('/login',(req,res) =>{
     var username = req.body.username;
