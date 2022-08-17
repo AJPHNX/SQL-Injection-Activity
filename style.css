@@ -38,6 +38,7 @@ form {
     color:#868686;
     padding-bottom: 10px;
 
+    z-index:99;
     }
     .header{
         display: flex;
@@ -52,11 +53,14 @@ form {
         align-items: center;
         justify-content: center;
         height: 200px;
-        
-        /* background: url('./assets/Syringe.svg') */
+        background: url('./assets/ColoredSyringe.svg');
+        /* opacity: 0.5; */
+        z-index:2;
     }
     .syringe-box{
         margin: auto;
+        /* background: url('./assets/hospital-syringe-svgrepo-com.svg'); */
+        background-repeat: no-repeat;
     }
     .header-text-wrap{
         position: relative;
@@ -68,6 +72,7 @@ form {
         height: fit-content;
         border-radius: 20px 20px 20px 20px;
     }
+    
      h6{
         position: relative;
         float: right;
@@ -108,13 +113,14 @@ input[type=text], input[type=password] {
     width: 200px;
     height: auto;
     justify-content: center;
+   
 }
 
 .blink:placeholder-shown {
     animation: blinker 1s linear infinite;
 }
-.blink {
-    animation: blinker 2s linear infinite;
+.blink:not(header-text-wrap) {
+    animation: blinker 3s linear infinite;
 }
 
    .form-container{

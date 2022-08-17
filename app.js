@@ -4,7 +4,7 @@ const http = require('http'),
     bodyParser = require('body-parser');
 const sqlite3 = require('sqlite3').verbose();
 
-const attackString = "unknown' OR '1'='1";
+const attackStrings = ["unknown' OR '1'='1"];
 
 const app = express();
 app.use(express.static('.'))
@@ -44,4 +44,6 @@ app.post('/login',(req,res) =>{
 		}
     })
 })
-app.listen(process.env.PORT);
+
+app.listen(process.env.PORT||3000);
+console.log(`Chillin on port: `+ process.env.PORT)
