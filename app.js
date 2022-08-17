@@ -44,4 +44,4 @@ app.post('/login',(req,res) =>{
 		}
     })
 })
-app.listen(3004);
+app.listen(3002);
